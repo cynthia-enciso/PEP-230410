@@ -27,7 +27,7 @@ public class App {
                 System.out.print("It's " + weekday);
             }
             System.out.printf(" and you have $%5.2f in your bank account.%n%n", funds);
-
+                                                // _ _ _ . _ _
             // deliberate and make purchase
             int combosToPurchase = deliberate(funds, scanner);
             funds = makePurchase(combosToPurchase, funds);
