@@ -1,66 +1,59 @@
 package models;
+
 import java.util.Objects;
 
+// 1. create this class and then explain encapsulation, move on to purchasable item
 public class Item {
-    
-    // state
+
+    // variables
     private String name;
     private String description;
     private String action;
 
     // constructors
-    // public Item() {}
-
     public Item(String name, String description) {
-        this.setName(name);
+        this.name = name;
         this.description = description;
     }
 
     public Item(String name, String description, String action) {
-        this.setName(name);
+        this.name = name;
         this.description = description;
         this.action = action;
     }
 
-    // getters and setters
+    // getters
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     public String getAction() {
         return action;
     }
 
-    public void setName(String name) {
-        if (name.equals(" ")) {
-            this.name = "GenericItem";
-        } else {
-            this.name = name;
-        }
-    }
-
-    // behavior
+    // methods
     public void lookAt() {
         System.out.println("You look at the item: " + this.name);
         System.out.println(this.description);
     }
 
+    // should also get abstracted away to an interface
     public void use() {
         System.out.println("You use the item: " + this.name);
         System.out.println(this.action);
     }
 
-    @Override
+    // after introducing UsableItem, override toString
     public String toString() {
         return "Item: " + this.name +
             " Description: " + this.description;
     }
 
-    @Override // objects of same type with same characteristics should be equivalent
+    @Override
     public boolean equals(Object o) {
         if (o == this)
             return true;
@@ -71,9 +64,9 @@ public class Item {
         return Objects.equals(name, item.name) && Objects.equals(description, item.description) && Objects.equals(action, item.action);
     }
 
-    @Override 
+    @Override
     public int hashCode() {
         return Objects.hash(name, description, action);
     }
-
+    
 }
