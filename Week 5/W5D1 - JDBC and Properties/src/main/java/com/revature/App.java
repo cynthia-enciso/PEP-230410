@@ -8,8 +8,6 @@ import com.revature.model.Pet;
 
 public class App 
 {
-
-
     public static void main( String[] args )
     {
         PetDAO petDAO = new PetDAOImpl();

@@ -7,7 +7,7 @@
  */
 
  // create a type
-interface BinaryCalculator {
+ interface BinaryCalculator {
     public double binaryOperation(double value1, double value2);
 } 
 
