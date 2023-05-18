@@ -10,7 +10,7 @@
  * - a functional interface that defines a method that takes in a param and returns a Dog with
  *      its name state initialized
  */
-public class E_UsingMethodReferences2 {
+public class F_UsingMethodReferences2 {
     public static void main(String[] args) {
     // I like this reference: https://www.nextptr.com/tutorial/ta1314009273/uses-of-constructor-method-reference
     UnnamedDogGenerator dogGenerator1 = Dog::new; // you can now generate unnamed dogs

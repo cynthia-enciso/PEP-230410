@@ -8,7 +8,7 @@ interface PrintTwoValues {
     public void printValues(String value1, int value2);
 }
 
-public class B_UsingLambdas {
+public class C_UsingLambdas {
     public static void main(String[] args) {
         // long-form
         PrintTwoValues lambda1 = (String value1, int value2) -> {

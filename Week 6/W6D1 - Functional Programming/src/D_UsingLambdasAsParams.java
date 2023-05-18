@@ -3,7 +3,7 @@ interface BinaryCalculator {
     public double binaryOperation(double value1, double value2);
 } 
 
-public class C_UsingLambdasAsParams {
+public class D_UsingLambdasAsParams {
 
     // higher-order function: function that takes in another function
         // param specifies the TYPE of function that can be passed in

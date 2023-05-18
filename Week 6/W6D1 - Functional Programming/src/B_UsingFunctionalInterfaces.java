@@ -14,7 +14,7 @@ class AverageTwoValues implements BinaryCalculator {
     
 }
 
-public class A_UsingFunctionalInterfaces {
+public class B_UsingFunctionalInterfaces {
     public static void main(String[] args) {
         // GOAL: I want to be able to write a function not tied to a class
 

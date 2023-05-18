@@ -7,12 +7,12 @@
  */
 
  // create a type
- interface BinaryCalculator {
+interface BinaryCalculator {
     public double binaryOperation(double value1, double value2);
 } 
 
 
-public class D_UsingMethodReferences1 {
+public class E_UsingMethodReferences1 {
 
     // create method that takes in this type
     public static void printBinaryResult(double value1, double value2, BinaryCalculator calculator) {
