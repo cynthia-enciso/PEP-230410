@@ -1,0 +1,51 @@
+<!-- Steps for using logging tool
+    1. configure using this file. should go under main > resources
+        - create appenders where you want info to go to
+        - assign appenders to any loggers you want to use
+    2. Create logger objects in each class you want to send log messages from
+        - call logger methods to create meaningful logs that will help with providing
+            information about the state of the application when it executes. See written content
+                for information regarding the logging levels.
+-->
+<configuration>
+    <!-- appender: represents destination for log messages to go to -->
+    <!-- this appender will send info to console -->
+    <appender name="console-appender" class="ch.qos.logback.core.ConsoleAppender">
+	<!-- encoder: area dedicated for layout of logs -->
+		<encoder>
+            <!-- format of logs that will be displayed -->
+			<pattern>
+			<!--  https://logback.qos.ch/manual/layouts.html -->
+			| %date{dd MMM yyyy | HH:mm:ss.SSS} | %-5level [%thread] %class{50}: %message | %n
+			</pattern>
+		</encoder>
+    </appender>
+
+    <!-- file appender -->
+	<appender name="file-appender" class="ch.qos.logback.core.FileAppender">
+	<!-- name of file to log to. created if doesn't exist. -->
+		<file>logs/app-logs.log</file>
+        <!-- will add to the file in the specified location NOT overwrite it -->
+		<append>true</append> 
+		<encoder>
+			<pattern>
+			<!--  https://logback.qos.ch/manual/layouts.html -->
+			| %date{dd MMM yyyy | HH:mm:ss.SSS} | %-5level [%thread] %class{50}: %message | %n
+			</pattern>
+		</encoder>
+	</appender>
+    
+    <!-- loggers: objects that send information to an appender / destionation
+            - they need a level specified (this filters which information to send)
+    -->
+
+<!-- loggers other than root will need a name attribute to specify their scope -->
+	<logger name="com.revature" level="DEBUG">
+		<appender-ref ref="file-appender" />
+	</logger>
+
+    <!-- root logger: scope is whole app (specifies default appender to use) -->
+    <root level="INFO">
+        <appender-ref ref="console-appender" />
+    </root>
+</configuration>
